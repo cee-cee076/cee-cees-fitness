@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery · Cee Cee's Fitness</title>
+  <meta name="description" content="Take a look inside Cee Cee's Fitness — weight training, cardio, group classes, yoga, recovery and the people who make it.">
+  <meta name="theme-color" content="#111214">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="gallery">
+  <div class="page-curtain" aria-hidden="true"><div class="curtain-logo">CEE CEE'S <span>FITNESS</span></div></div>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800&q=60&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Home</a><i class="fas fa-circle"></i><span>Gallery</span></div>
+        <h1>Inside <span class="red">the club</span></h1>
+        <p>Iron, sweat and good energy. Browse the floor, the studio and the crew &mdash; tap any photo to view it full screen.</p>
+      </div>
+    </section>
+
+    <section class="pb-5" style="position:relative;z-index:2">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <div class="scroll-x" style="max-width:100%">
+              <div class="chip-row" id="galleryFilters" role="group" aria-label="Filter photos by category"></div>
+            </div>
+            <div class="gallery-count" id="galleryCount" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="masonry" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section pt-4">
+      <div class="container">
+        <div class="cta-banner" data-reveal="scale">
+          <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=60&auto=format&fit=crop')"></div>
+          <div class="cta-ring"></div><div class="cta-ring r2"></div>
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <h2 class="mb-3">See it in person.</h2>
+              <p class="mb-0">Come train with us for a week, on the house. Tag <b>#CEECEESFAM</b> for a chance to be featured here.</p>
+            </div>
+            <div class="col-lg-4 d-flex flex-wrap gap-3 justify-content-lg-end">
+              <a href="signup.html" class="btn-cc"><i class="fas fa-bolt"></i> Start free trial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- lightbox dialog -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+    <div class="lb-counter"></div>
+    <button class="lb-btn lb-close" type="button" aria-label="Close viewer"><i class="fas fa-xmark"></i></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous photo"><i class="fas fa-arrow-left"></i></button>
+    <div class="lb-stage">
+      <div class="lb-spinner"></div>
+      <img class="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+    </div>
+    <button class="lb-btn lb-next" type="button" aria-label="Next photo"><i class="fas fa-arrow-right"></i></button>
+    <div class="lb-meta"><div class="lb-cat"></div><div class="lb-cap"></div></div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

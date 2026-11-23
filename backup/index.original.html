@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cee Cee's Fitness · Frontend</title>
+  <!-- Bootstrap 5 CSS (light version) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- custom style for fine tuning -->
+  <style>
+    /* ===== ROOT & TYPOGRAPHY ===== */
+    :root {
+      --cc-red: #c41e3a;      /* signature bold red */
+      --cc-dark: #111214;     /* almost black */
+      --cc-gray: #2c2f33;     /* dark gray for contrast */
+      --cc-light: #f8f9fa;
+      --cc-accent: #ffb800;    /* warm gold accent */
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: white;
+      color: #1e1e1e;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: var(--cc-red);
+      border-radius: 4px;
+    }
+    /* ===== NAVBAR ===== */
+    .navbar-cc {
+      background-color: var(--cc-dark) !important;
+      padding: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .navbar-cc .navbar-brand {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: white !important;
+      letter-spacing: -0.5px;
+    }
+    .navbar-cc .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 600;
+      margin: 0 0.5rem;
+      transition: 0.2s;
+    }
+    .navbar-cc .nav-link:hover,
+    .navbar-cc .nav-link.active {
+      color: var(--cc-red) !important;
+    }
+    .navbar-cc .nav-link i {
+      margin-right: 6px;
+      font-size: 0.9rem;
+    }
+    /* brand span */
+    .brand-gym {
+      color: var(--cc-red);
+      font-weight: 900;
+    }
+    /* ===== HERO SECTION ===== */
+    .hero {
+        background-image: url(../assets/img/hero.avif);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      /* background: linear-gradient(82deg, #0b0c0e 0%, #1a1d21 100%); */
+      color: white;
+      padding: 5.5rem 0 16rem;
+      margin-top: 72px;   /* fixed navbar offset */
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .hero-highlight {
+      color: var(--cc-red);
+      border-left: 8px solid var(--cc-red);
+      padding-left: 1rem;
+    }
+    .hero-text {
+      font-size: 1.2rem;
+      color: #d0d3d8;
+      margin: 1.8rem 0 2.2rem;
+      max-width: 540px;
+    }
+    .hero-btn {
+      background-color: var(--cc-red);
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 12px 36px;
+      border-radius: 40px;
+      transition: 0.25s;
+      box-shadow: 0 8px 16px rgba(196,30,58,0.3);
+    }
+    .hero-btn:hover {
+      background-color: #a01730;
+      transform: scale(1.03);
+      color: white;
+    }
+    .hero-btn i {
+      margin-right: 8px;
+    }
+    /* ===== FEATURES ICONS ===== */
+  .feature-icon {
+    background-color: black;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 8px 14px rgba(196,30,58,0.25);
+  }
+  .feature-card {
+    border: none;
+    background: #a01730;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    /* transition: 0.15s; */
+  }
+
+  .feature-card h4{
+    color: black;
+  }
+
+
+  .feature-card:hover {
+    background: var(--cc-red);
+    opacity: 0.8;
+    box-shadow: 0 20px 28px -10px rgba(0,0,0,0.12);
+  }
+
+  /* ===== SCHEDULE (card style) ===== */
+  .bigbull{
+    background-color: black;
+  }
+  .schedule-item {
+    background: var(--cc-light);
+    border-radius: 24px;
+    padding: 1.2rem 1.8rem;
+    margin-bottom: 1rem;;
+    border-left: 6px solid var(--cc-red);
+    transition: 0.15s;
+  }
+  .schedule-item .day {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--cc-dark);
+  }
+  .schedule-item .class-name {
+    font-weight: 700;
+    color: var(--cc-red);
+  }
+  .schedule-item .time {
+    font-weight: 600;
+    color: #3d4147;
+  }
+  .schedule-item i {
+    color: var(--cc-red);
+    width: 28px;
+  }
+  /* ===== TRAINER CARDS ===== */
+  .trainer-card {
+    border-radius: 32px;
+    overflow: hidden;
+    border: none;
+    background: white;
+    box-shadow: 0 14px 22px -12px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+  }
+  .trainer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 30px -12px rgba(196,30,58,0.18);
+  }
+  .trainer-img {
+    height: 280px;
+    object-fit: cover;
+    filter: grayscale(0.4);
+    transition: 0.3s;
+  }
+  .trainer-card:hover .trainer-img {
+    filter: grayscale(0);
+  }
+  .trainer-card .card-body {
+    padding: 1.5rem 1rem 1.8rem;
+    background: white;
+  }
+  .trainer-card .badge-cc {
+    background: var(--cc-red);
+    color: white;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+  }
+  /* ===== MEMBERSHIP ===== */
+  .pricing-card {
+    border-radius: 36px;
+    border: 1px solid rgba(0,0,0,0.05);
+    background: white;
+    padding: 2rem 1.8rem;
+    box-shadow: 0 18px 28px -14px rgba(0,0,0,0.05);
+    transition: all 0.25s;
+  }
+  .pricing-card.popular {
+    border: 2px solid var(--cc-red);
+    background: #fffcfc;
+    transform: scale(1.02);
+    position: relative;
+  }
+  .popular-tag {
+    background: var(--cc-red);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 60px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  .price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--cc-dark);
+  }
+  .price span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #6c757d;
+  }
+  .btn-outline-cc {
+    border: 2px solid var(--cc-red);
+    color: var(--cc-red);
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 10px 28px;
+    background: transparent;
+  }
+  .btn-outline-cc:hover {
+    background: var(--cc-red);
+    color: white;
+  }
+  .btn-cc-solid {
+    background: var(--cc-red);
+    color: white;
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 10px 28px;
+    border: 2px solid var(--cc-red);
+  }
+  .btn-cc-solid:hover {
+    background: #a01730;
+    border-color: #a01730;
+    color: white;
+  }
+  /* ===== FOOTER ===== */
+  .footer-cc {
+    background: var(--cc-dark);
+    color: #e5e7eb;
+    padding: 3rem 0 1.5rem;
+    border-top: 4px solid var(--cc-red);
+  }
+  .footer-cc a {
+    color: #cbd5e1;
+    text-decoration: none;
+  }
+  .footer-cc a:hover {
+    color: var(--cc-red);
+  }
+  .social-icon {
+    background: #2c2f33;
+    width: 42px;
+    height: 42px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 8px;
+    transition: 0.2s;
+  }
+  .social-icon:hover {
+    background: var(--cc-red);
+    color: white;
+  }
+  /* ===== UTILITIES ===== */
+  .bg-cc-light {
+    background-color: #f4f6f9;
+  }
+  .text-cc-red {
+    color: var(--cc-red) !important;
+  }
+  </style>
+</head>
+<body>
+  <!-- fixed navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-cc fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><span class="brand-gym">CEE CEE'S</span> FITNESS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home"><i class="fas fa-dumbbell"></i>HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features"><i class="fas fa-heart"></i>FEATURES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schedule"><i class="far fa-clock"></i>SCHEDULE</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trainers"><i class="fas fa-users"></i>TRAINERS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing"><i class="fas fa-tag"></i>PRICING</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-map-pin"></i>CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO section (home) -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="hero-highlight">SWEAT.<br>BELIEVE.<br>CONQUER.</h1>
+          <p class="hero-text">Cee Cee's Fitness is where strength meets community. From high-intensity classes to personalized coaching – we’ll push your limits.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#pricing" class="btn hero-btn"><i class="fas fa-bolt"></i> START 7-DAY FREE TRIAL</a>
+            <a href="#schedule" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"><i class="far fa-calendar-alt me-2"></i>VIEW SCHEDULE</a>
+          </div>
+          <div class="mt-5 d-flex gap-4">
+            <div><span class="fw-bold fs-3 text-white">500+</span> <span class="text-white-50">members</span></div>
+            <div><span class="fw-bold fs-3 text-white">15</span> <span class="text-white-50">daily classes</span></div>
+            <div><span class="fw-bold fs-3 text-white">6</span> <span class="text-white-50">expert trainers</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <!-- decorative hero image / graphic (font awesome) -->
+          <div class="text-end text-white-50 opacity-50">
+            <i class="fas fa-dumbbell" style="font-size: 12rem; opacity: 0.25;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES section -->
+  <section id="features" class="py-5 bg-cc-light">
+    <div class="container py-5">
+      <h2 class="section-title display-5 fw-bold">WHY TRAIN AT CEE CEE'S?</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card h-100">
+            <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+            <h4>Elite equipment</h4>
+            <p class="text-black">Premium racks, machines and free weights – always maintained.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card h-100">
+            <div class="feature-icon"><i class="fas fa-users"></i></div>
+            <h4>Small groups</h4>
+            <p class="text-black">Max 12 per class to ensure personal attention & form.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card h-100">
+            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+            <h4>24/7 access</h4>
+            <p class="text-black">Swipe in anytime, even at 3 AM. Yes, really.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card h-100">
+            <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+            <h4>Recovery zone</h4>
+            <p class="text-black">Sauna, massage guns and cold towels after every sweat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE section (sample classes) -->
+  <section id="schedule">
+    <div class="bigbull container-fluid py-4">
+      <h2 class="section-title display-5 fw-bold">WEEKLY CLASS SCHEDULE</h2>
+      <div class="row mt-5">
+        <div class="col-lg-8">
+          <div class="schedule-item d-flex flex-wrap align-items-center justify-content-between">
+            <div><i class="fas fa-calendar-day me-2"></i><span class="day">MONDAY</span></div>
+            <div><span class="class-name"><i class="fas fa-fire me-1"></i> HIIT BLAZE</span></div>
+            <div><span class="time"><i class="far fa-clock me-1"></i> 9:30 AM, 5:30 PM</span></div>
+            <div><span class="badge bg-dark rounded-pill px-3 py-2">Alex</span></div>
+          </div>
+          <div class="schedule-item d-flex flex-wrap align-items-center justify-content-between">
+            <div><i class="fas fa-calendar-day me-2"></i><span class="day">TUESDAY</span></div>
+            <div><span class="class-name"><i class="fas fa-heartbeat me-1"></i> CARDIO DANCE</span></div>
+            <div><span class="time"><i class="far fa-clock me-1"></i> 10:00 AM, 6:15 PM</span></div>
+            <div><span class="badge bg-dark rounded-pill px-3 py-2">Jordan</span></div>
+          </div>
+          <div class="schedule-item d-flex flex-wrap align-items-center justify-content-between">
+            <div><i class="fas fa-calendar-day me-2"></i><span class="day">WEDNESDAY</span></div>
+            <div><span class="class-name"><i class="fas fa-dumbbell me-1"></i> PUMP & IRON</span></div>
+            <div><span class="time"><i class="far fa-clock me-1"></i> 7:00 AM, 12:00 PM</span></div>
+            <div><span class="badge bg-dark rounded-pill px-3 py-2">Cee Cee</span></div>
+          </div>
+          <div class="schedule-item d-flex flex-wrap align-items-center justify-content-between">
+            <div><i class="fas fa-calendar-day me-2"></i><span class="day">THURSDAY</span></div>
+            <div><span class="class-name"><i class="fas fa-brain me-1"></i> YOGA FLOW</span></div>
+            <div><span class="time"><i class="far fa-clock me-1"></i> 11:00 AM, 7:00 PM</span></div>
+            <div><span class="badge bg-dark rounded-pill px-3 py-2">Maya</span></div>
+          </div>
+          <div class="schedule-item d-flex flex-wrap align-items-center justify-content-between">
+            <div><i class="fas fa-calendar-day me-2"></i><span class="day">FRIDAY</span></div>
+            <div><span class="class-name"><i class="fas fa-bolt me-1"></i> METCON</span></div>
+            <div><span class="time"><i class="far fa-clock me-1"></i> 6:30 AM, 4:30 PM</span></div>
+            <div><span class="badge bg-dark rounded-pill px-3 py-2">Rob</span></div>
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0 ps-lg-4">
+          <div class="bg-dark text-white p-4 rounded-4 h-100 d-flex flex-column justify-content-center">
+            <i class="fas fa-calendar-check fs-1 text-cc-red mb-3"></i>
+            <h3 class="h4">BOOK A CLASS</h3>
+            <p class="text-white-50">Spots fill fast — reserve up to 7 days in advance via our app.</p>
+            <button class="btn btn-outline-light rounded-pill w-75 mt-2"><i class="fas fa-mobile-alt me-2"></i>DOWNLOAD APP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS section -->
+  <section id="trainers" class="py-5 bg-cc-light">
+    <div class="container py-4">
+      <h2 class="section-title display-5 fw-bold">MEET THE PROS</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card card">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&auto=format&fit=crop" class="card-img-top trainer-img" alt="trainer cee cee">
+            <div class="card-body text-center">
+              <span class="badge-cc mb-2">OWNER / HEAD COACH</span>
+              <h4 class="card-title mb-1">CEE CEE</h4>
+              <p class="text-secondary">10 yrs · strength & conditioning</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card card">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&auto=format&fit=crop" class="card-img-top trainer-img" alt="trainer alex">
+            <div class="card-body text-center">
+              <span class="badge-cc mb-2">HIIT SPECIALIST</span>
+              <h4 class="card-title mb-1">ALEX REY</h4>
+              <p class="text-secondary">tabata · bootcamp · agility</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card card">
+            <img src="https://images.unsplash.com/photo-1581009137042-c552e485697a?w=400&auto=format&fit=crop" class="card-img-top trainer-img" alt="trainer jordan">
+            <div class="card-body text-center">
+              <span class="badge-cc mb-2">CARDIO & DANCE</span>
+              <h4 class="card-title mb-1">JORDAN LEE</h4>
+              <p class="text-secondary">zumba · step · fun cardio</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="trainer-card card">
+            <img src="https://images.unsplash.com/photo-1601429068382-a5bb8b45d9ad?w=400&auto=format&fit=crop" class="card-img-top trainer-img" alt="trainer maya">
+            <div class="card-body text-center">
+              <span class="badge-cc mb-2">YOGA / MINDSET</span>
+              <h4 class="card-title mb-1">MAYA JOSHI</h4>
+              <p class="text-secondary">vinyasa · mobility · meditation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING (membership) -->
+  <section id="pricing" class="py-5">
+    <div class="container py-3">
+      <h2 class="section-title display-5 fw-bold">MEMBERSHIP OPTIONS</h2>
+      <div class="row mt-5 g-4">
+        <div class="col-lg-4">
+          <div class="pricing-card h-100">
+            <h4 class="fw-bold">STARTER</h4>
+            <div class="price">$29<span>/month</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> Gym floor access (off-peak)</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> 2 group classes / week</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> Locker room included</li>
+              <li class="text-secondary"><i class="fas fa-times-circle me-2"></i> No 24/7 access</li>
+            </ul>
+            <a href="#" class="btn btn-outline-cc w-100">START NOW</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-card popular h-100">
+            <span class="popular-tag">⚡ MOST POPULAR</span>
+            <h4 class="fw-bold">UNLIMITED</h4>
+            <div class="price">$59<span>/month</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> 24/7 access · all equipment</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> Unlimited classes</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> Sauna & recovery</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> 1 PT session / month</li>
+            </ul>
+            <a href="#" class="btn btn-cc-solid w-100">GET UNLIMITED</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-card h-100">
+            <h4 class="fw-bold">DUO / COUPLE</h4>
+            <div class="price">$89<span>/month</span></div>
+            <ul class="list-unstyled mt-4 mb-4">
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> Two memberships</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> All group classes</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> 24/7 for both</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-cc-red me-2"></i> 2 PT/month combined</li>
+            </ul>
+            <a href="#" class="btn btn-outline-cc w-100">JOIN AS DUO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="footer-cc">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-5">
+          <h3 class="fw-bold text-white"><span class="brand-gym">CEE CEE'S</span> FITNESS</h3>
+          <p class="mt-3 w-75">1520 Muscle Ave, Los Angeles, CA 90024<br> <i class="fas fa-phone-alt me-2"></i> (310) 555-8787<br> <i class="far fa-envelope me-2"></i> hello@ceecees.fit</p>
+          <div class="mt-4">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h5 class="fw-bold text-white">EXPLORE</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#home">Home</a></li>
+            <li class="mb-2"><a href="#features">Features</a></li>
+            <li class="mb-2"><a href="#schedule">Schedule</a></li>
+            <li class="mb-2"><a href="#trainers">Trainers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold text-white">#CEEBEESFAM</h5>
+          <p class="text-white-50">Tag us for a chance to be featured.</p>
+          <div class="d-flex">
+            <input type="email" class="form-control rounded-pill me-2" placeholder="Email for newsletter">
+            <button class="btn btn-cc-solid rounded-pill px-4">→</button>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary mt-5">
+      <div class="d-flex flex-wrap justify-content-between small text-white-50">
+        <span>© 2025 CEE CEE'S FITNESS — sweat together.</span>
+        <span>Built with <i class="fas fa-heart text-cc-red"></i> for the gym family</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (for toggler, smooth scroll etc) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- optional smooth scroll behavior (just a tiny addition) -->
+  <script>
+    (function() {
+      // smooth scroll for anchor links (optional)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === "#" || href === "") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

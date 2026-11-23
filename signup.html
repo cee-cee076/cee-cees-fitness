@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up · Cee Cee's Fitness</title>
+  <meta name="description" content="Join Cee Cee's Fitness. Choose your plan and preferred class times, and start with a 7-day free trial.">
+  <meta name="theme-color" content="#111214">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="signup">
+  <div class="page-curtain" aria-hidden="true"><div class="curtain-logo">CEE CEE'S <span>FITNESS</span></div></div>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1800&q=60&auto=format&fit=crop')"></div>
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Home</a><i class="fas fa-circle"></i><span>Sign up</span></div>
+        <h1>Join <span class="red">the family</span></h1>
+        <p>Two minutes, four quick steps. We'll get back to you within one business day to set up your 7-day free trial.</p>
+      </div>
+    </section>
+
+    <section class="pb-5 mb-lg-5" style="position:relative;z-index:2">
+      <div class="container">
+        <div class="row g-4 g-xl-5">
+          <div class="col-lg-8">
+            <div class="form-shell" data-reveal>
+              <form id="signupForm" novalidate>
+                <div class="form-progress" aria-hidden="true"><span id="progressBar"></span></div>
+                <div class="form-progress-label"><span>Your progress</span><span id="progressText">0% complete</span></div>
+
+                <div class="trial-note mb-4" id="bookingNote" hidden><i class="fas fa-calendar-check"></i><span></span></div>
+
+                <!-- step 1 -->
+                <fieldset class="form-step" data-step="1">
+                  <legend class="visually-hidden">About you</legend>
+                  <div class="form-step-head"><span class="step-num">1</span><div><h2>About you</h2><p>So we know who's joining.</p></div></div>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <div class="field" data-field="fullName">
+                        <label class="lbl" for="fullName">Full name</label>
+                        <div class="input-wrap"><input class="cc-input" id="fullName" name="fullName" type="text" autocomplete="name" placeholder="e.g. Jamie Rivera" required aria-describedby="fullName-err"><i class="fas fa-user"></i><i class="fas fa-circle-check valid-icon" aria-hidden="true"></i></div>
+                        <div class="err" id="fullName-err"><i class="fas fa-circle-exclamation"></i>Please enter your full name.</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="field" data-field="email">
+                        <label class="lbl" for="email">Email</label>
+                        <div class="input-wrap"><input class="cc-input" id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="email-err"><i class="fas fa-envelope"></i><i class="fas fa-circle-check valid-icon" aria-hidden="true"></i></div>
+                        <div class="err" id="email-err"><i class="fas fa-circle-exclamation"></i>Please enter a valid email address.</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="field" data-field="phone">
+                        <label class="lbl" for="phone">Phone</label>
+                        <div class="input-wrap"><input class="cc-input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(310) 555-0123" required aria-describedby="phone-err"><i class="fas fa-phone"></i><i class="fas fa-circle-check valid-icon" aria-hidden="true"></i></div>
+                        <div class="err" id="phone-err"><i class="fas fa-circle-exclamation"></i>Please enter a valid phone number (at least 10 digits).</div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- step 2 -->
+                <fieldset class="form-step" data-step="2">
+                  <legend class="visually-hidden">Choose your plan</legend>
+                  <div class="form-step-head"><span class="step-num">2</span><div><h2>Choose your plan</h2><p>You can change this later.</p></div></div>
+                  <div class="field" data-field="plan">
+                    <div class="plan-options" role="radiogroup" aria-describedby="plan-err">
+                      <div class="plan-opt">
+                        <input type="radio" name="plan" id="plan-starter" value="starter">
+                        <label for="plan-starter"><span class="po-name">Starter <span class="po-check"><i class="fas fa-check"></i></span></span><div class="po-price">$29<small>/mo</small></div><div class="po-sub">Off-peak · 2 classes/wk</div></label>
+                      </div>
+                      <div class="plan-opt">
+                        <input type="radio" name="plan" id="plan-unlimited" value="unlimited">
+                        <label for="plan-unlimited"><span class="po-pop">MOST POPULAR</span><span class="po-name">Unlimited <span class="po-check"><i class="fas fa-check"></i></span></span><div class="po-price">$59<small>/mo</small></div><div class="po-sub">24/7 · unlimited classes</div></label>
+                      </div>
+                      <div class="plan-opt">
+                        <input type="radio" name="plan" id="plan-duo" value="duo">
+                        <label for="plan-duo"><span class="po-name">Duo <span class="po-check"><i class="fas fa-check"></i></span></span><div class="po-price">$89<small>/mo</small></div><div class="po-sub">2 members · 24/7 both</div></label>
+                      </div>
+                    </div>
+                    <div class="err" id="plan-err"><i class="fas fa-circle-exclamation"></i>Please choose a membership plan.</div>
+                  </div>
+                  <div class="collapse-field" id="partnerWrap">
+                    <div>
+                      <div class="field pt-2" data-field="partnerName">
+                        <label class="lbl" for="partnerName">Training partner's name <span class="opt">(optional)</span></label>
+                        <div class="input-wrap"><input class="cc-input" id="partnerName" name="partnerName" type="text" autocomplete="off" placeholder="Who are you joining with?" tabindex="-1"><i class="fas fa-user-group"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- step 3 -->
+                <fieldset class="form-step" data-step="3">
+                  <legend class="visually-hidden">Preferred class times</legend>
+                  <div class="form-step-head"><span class="step-num">3</span><div><h2>When do you train?</h2><p>Pick all that suit you.</p></div></div>
+                  <div class="field" data-field="times">
+                    <label class="lbl" id="times-lbl">Preferred class times</label>
+                    <div class="check-chips" role="group" aria-labelledby="times-lbl" aria-describedby="times-err">
+                      <div class="check-chip"><input type="checkbox" name="times" id="t-morning" value="morning"><label for="t-morning"><i class="fas fa-sun"></i>Morning <small>6&ndash;11 AM</small></label></div>
+                      <div class="check-chip"><input type="checkbox" name="times" id="t-midday" value="midday"><label for="t-midday"><i class="fas fa-cloud-sun"></i>Midday <small>11 AM&ndash;4 PM</small></label></div>
+                      <div class="check-chip"><input type="checkbox" name="times" id="t-evening" value="evening"><label for="t-evening"><i class="fas fa-cloud-moon"></i>Evening <small>4&ndash;7 PM</small></label></div>
+                      <div class="check-chip"><input type="checkbox" name="times" id="t-late" value="late"><label for="t-late"><i class="fas fa-moon"></i>Late <small>7 PM+</small></label></div>
+                      <div class="check-chip"><input type="checkbox" name="times" id="t-weekend" value="weekend"><label for="t-weekend"><i class="fas fa-calendar-week"></i>Weekends</label></div>
+                    </div>
+                    <div class="err" id="times-err"><i class="fas fa-circle-exclamation"></i>Pick at least one time that works for you.</div>
+                  </div>
+                  <div class="field mt-4">
+                    <label class="lbl" id="int-lbl">Classes you're interested in <span class="opt">(optional)</span></label>
+                    <div class="check-chips" role="group" aria-labelledby="int-lbl">
+                      <div class="check-chip"><input type="checkbox" name="interests" id="i-strength" value="strength"><label for="i-strength"><i class="fas fa-dumbbell"></i>Strength</label></div>
+                      <div class="check-chip"><input type="checkbox" name="interests" id="i-hiit" value="hiit"><label for="i-hiit"><i class="fas fa-fire"></i>HIIT</label></div>
+                      <div class="check-chip"><input type="checkbox" name="interests" id="i-cardio" value="cardio"><label for="i-cardio"><i class="fas fa-heart-pulse"></i>Cardio &amp; dance</label></div>
+                      <div class="check-chip"><input type="checkbox" name="interests" id="i-mind" value="mind"><label for="i-mind"><i class="fas fa-spa"></i>Yoga &amp; mobility</label></div>
+                      <div class="check-chip"><input type="checkbox" name="interests" id="i-pt" value="pt"><label for="i-pt"><i class="fas fa-medal"></i>Personal training</label></div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- step 4 -->
+                <fieldset class="form-step mb-4" data-step="4">
+                  <legend class="visually-hidden">Anything else</legend>
+                  <div class="form-step-head"><span class="step-num">4</span><div><h2>Anything else?</h2><p>Goals, injuries, questions &mdash; tell us.</p></div></div>
+                  <div class="field" data-field="notes">
+                    <label class="lbl" for="notes">Notes <span class="opt">(optional)</span></label>
+                    <div class="input-wrap">
+                      <textarea class="cc-input" id="notes" name="notes" maxlength="500" placeholder="e.g. Training for my first 10K, recovering from a knee injury…" aria-describedby="notes-count"></textarea>
+                      <i class="fas fa-pen top"></i>
+                      <span class="char-count" id="notes-count">0 / 500</span>
+                    </div>
+                  </div>
+                  <div class="field mt-3" data-field="consent">
+                    <label class="consent">
+                      <input type="checkbox" id="consent" name="consent" aria-describedby="consent-err">
+                      <span class="box"><i class="fas fa-check"></i></span>
+                      <span>I agree to be contacted by Cee Cee's Fitness about my membership and free trial.</span>
+                    </label>
+                    <div class="err" id="consent-err"><i class="fas fa-circle-exclamation"></i>Please agree so we can contact you.</div>
+                  </div>
+                </fieldset>
+
+                <button type="submit" class="btn-cc btn-block" id="submitBtn" style="padding:1.15rem">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <i class="fas fa-bolt btn-ico"></i><span class="btn-label">Start my free trial</span>
+                </button>
+                <p class="small text-center text-muted-cc mt-3 mb-0"><i class="fas fa-lock me-1"></i>No payment needed today.</p>
+              </form>
+
+              <!-- success state -->
+              <div class="success-panel" id="successPanel" role="status" aria-live="polite" tabindex="-1">
+                <svg class="success-check" viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="50"/><path d="M33 57 L49 72 L78 40"/></svg>
+                <span class="eyebrow justify-content-center">Request received</span>
+                <h2>Welcome, <span class="text-red" id="successName">champ</span>!</h2>
+                <p class="mx-auto" style="max-width:480px">Thanks for joining Cee Cee's Fitness. Our team will reach out shortly to confirm your details and schedule your first session.</p>
+                <div class="success-recap" id="successRecap"></div>
+                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                  <a href="classes.html" class="btn-cc"><i class="far fa-calendar-alt"></i> Browse classes</a>
+                  <a href="index.html" class="btn-ghost">Back to home</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- summary -->
+          <div class="col-lg-4">
+            <aside class="summary-card" data-reveal="right" aria-labelledby="summaryTitle">
+              <div class="glow"></div>
+              <span class="eyebrow" id="summaryTitle">Your plan</span>
+              <div id="summaryBody">
+                <div class="summary-plan" id="sumName">Pick a plan</div>
+                <div class="summary-price mt-2" id="sumPrice">$&mdash;<small>/month</small></div>
+                <ul class="price-list" id="sumList">
+                  <li><i class="fas fa-arrow-left"></i>Choose a plan to see what's included.</li>
+                </ul>
+              </div>
+              <div class="trial-note"><i class="fas fa-gift"></i><span><b>7 days free</b> on every plan. Try classes, meet the coaches, then decide.</span></div>
+              <div class="divider-line my-4"></div>
+              <ul class="footer-contact list-unstyled small mb-0" style="display:grid;gap:.6rem">
+                <li><i class="fas fa-location-dot"></i><span>1520 Muscle Ave, Los Angeles, CA 90024</span></li>
+                <li><i class="fas fa-phone"></i><a class="text-white text-decoration-none" href="tel:+13105558787">(310) 555-8787</a></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/signup.js"></script>
+</body>
+</html>

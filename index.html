@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cee Cee's Fitness · Sweat. Believe. Conquer.</title>
+  <meta name="description" content="Cee Cee's Fitness in Los Angeles — 24/7 access, small-group classes, expert coaches and a recovery zone. Start your 7-day free trial.">
+  <meta name="theme-color" content="#111214">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="assets/img/hero.avif" type="image/avif">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="home">
+  <div class="page-curtain" aria-hidden="true"><div class="curtain-logo">CEE CEE'S <span>FITNESS</span></div></div>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container position-relative">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6 hero-content">
+            <span class="hero-pill"><span class="dot"><i class="fas fa-bolt"></i></span> Los Angeles · 24/7 strength club</span>
+            <h1 class="hero-title" aria-label="Sweat. Believe. Conquer.">
+              <span class="line"><span class="line-inner">Sweat.</span></span>
+              <span class="line"><span class="line-inner">Believe.</span></span>
+              <span class="line"><span class="line-inner">Conquer.</span></span>
+            </h1>
+            <p class="hero-text">Cee Cee's Fitness is where strength meets community. From high-intensity classes to personalized coaching &ndash; we'll push your limits.</p>
+            <div class="hero-actions">
+              <a href="signup.html" class="btn-cc"><i class="fas fa-bolt"></i> Start 7-day free trial</a>
+              <a href="classes.html" class="btn-ghost"><i class="far fa-calendar-alt"></i> View schedule</a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><div class="num" data-count="500" data-suffix="+">500<em>+</em></div><div class="lbl">Members</div></div>
+              <div class="hero-stat"><div class="num" data-count="15">15</div><div class="lbl">Daily classes</div></div>
+              <div class="hero-stat"><div class="num" data-count="6">6</div><div class="lbl">Expert trainers</div></div>
+            </div>
+          </div>
+
+          <!-- layered 3D scene (desktop) -->
+          <div class="col-lg-6 d-none d-lg-block" aria-hidden="true">
+            <div class="hero-scene">
+              <div class="scene-inner">
+                <div class="scene-layer plate-wrap" data-depth="0.4">
+                  <div class="plate">
+                    <div class="plate-rim"></div>
+                    <div class="plate-face plate-back"></div>
+                    <div class="plate-face plate-front">
+                      <div class="plate-num">45<small>LBS</small></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="scene-layer card-next" data-depth="1.2">
+                  <div class="glass float-card bob">
+                    <div class="fc-row">
+                      <span class="fc-icon"><i class="fas fa-fire"></i></span>
+                      <div>
+                        <div class="fc-label">Next class</div>
+                        <div class="fc-title">HIIT Blaze</div>
+                        <div class="small text-muted-cc">Mon · 5:30 PM · Alex</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="scene-layer card-members" data-depth="0.9">
+                  <div class="glass float-card bob-2">
+                    <div class="fc-label">Community</div>
+                    <div class="fc-title">500+ members</div>
+                    <div class="avatars">
+                      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop&crop=faces&auto=format" alt="">
+                      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=80&h=80&fit=crop&crop=faces&auto=format" alt="">
+                      <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=80&h=80&fit=crop&crop=faces&auto=format" alt="">
+                      <img src="https://images.unsplash.com/photo-1581009137042-c552e485697a?w=80&h=80&fit=crop&crop=faces&auto=format" alt="">
+                      <span class="more">+496</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="scene-layer card-heart" data-depth="1.5">
+                  <div class="glass float-card bob-3">
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div>
+                        <div class="fc-label">Heart rate zone</div>
+                        <div class="bpm">152<small>BPM</small></div>
+                      </div>
+                      <span class="fc-icon gold"><i class="fas fa-heart-pulse"></i></span>
+                    </div>
+                    <svg class="ecg" viewBox="0 0 220 44" preserveAspectRatio="none">
+                      <path d="M0 24 H50 L60 24 L68 6 L78 40 L88 14 L96 24 H140 L148 24 L156 10 L164 36 L172 24 H220" fill="none" stroke="#c41e3a" stroke-width="2.5" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="scene-layer fi-1" data-depth="2"><div class="float-icon bob-2"><i class="fas fa-dumbbell"></i></div></div>
+                <div class="scene-layer fi-2" data-depth="1.6"><div class="float-icon glass bob"><i class="fas fa-bolt text-gold"></i></div></div>
+                <div class="scene-layer fi-3" data-depth="0.7"><div class="float-icon glass bob-3"><i class="fas fa-trophy"></i></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#features" class="scroll-cue" aria-label="Scroll to content"><span class="mouse"></span>Scroll</a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">Strength <i class="fas fa-star"></i> HIIT <i class="fas fa-star"></i> Yoga <i class="fas fa-star"></i> Cardio <i class="fas fa-star"></i> Recovery <i class="fas fa-star"></i> Community <i class="fas fa-star"></i></div>
+        <div class="marquee-item">Strength <i class="fas fa-star"></i> HIIT <i class="fas fa-star"></i> Yoga <i class="fas fa-star"></i> Cardio <i class="fas fa-star"></i> Recovery <i class="fas fa-star"></i> Community <i class="fas fa-star"></i></div>
+      </div>
+    </div>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="section" id="features">
+      <div class="glow" style="width:420px;height:420px;left:-200px;top:20%"></div>
+      <div class="container z-2">
+        <div class="row section-head align-items-end g-4">
+          <div class="col-lg-7">
+            <span class="eyebrow" data-reveal="fade">Why Cee Cee's</span>
+            <h2 class="section-title" data-split>Why train <span class="outline">at</span> <span class="red">Cee Cee's?</span></h2>
+          </div>
+          <div class="col-lg-5">
+            <p class="lead-text" data-reveal>Everything you need to get strong and stay consistent &mdash; premium kit, coaches who care and a crew that shows up.</p>
+          </div>
+        </div>
+
+        <div class="row g-4" data-stagger>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card" data-tilt="8">
+              <span class="feature-num">01</span>
+              <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+              <h3>Elite equipment</h3>
+              <p>Premium racks, machines and free weights &ndash; always maintained.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card" data-tilt="8">
+              <span class="feature-num">02</span>
+              <div class="feature-icon"><i class="fas fa-users"></i></div>
+              <h3>Small groups</h3>
+              <p>Max 12 per class to ensure personal attention &amp; form.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card" data-tilt="8">
+              <span class="feature-num">03</span>
+              <div class="feature-icon"><i class="fas fa-clock"></i></div>
+              <h3>24/7 access</h3>
+              <p>Swipe in anytime, even at 3 AM. Yes, really.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card" data-tilt="8">
+              <span class="feature-num">04</span>
+              <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+              <h3>Recovery zone</h3>
+              <p>Sauna, massage guns and cold towels after every sweat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INSIDE THE CLUB ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6">
+            <div class="stack">
+              <div class="stack-img s1" data-speed="0.6"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&q=70&auto=format&fit=crop" alt="Cee Cee's training floor with racks and machines" loading="lazy"></div>
+              <div class="stack-img s2" data-speed="1.6"><img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=700&q=70&auto=format&fit=crop" alt="Member preparing for a barbell lift" loading="lazy"></div>
+              <div class="stack-img s3" data-speed="2.4"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700&q=70&auto=format&fit=crop" alt="Small group class in session" loading="lazy"></div>
+              <div class="stack-badge" data-speed="3.2" aria-hidden="true">
+                <svg class="rot" viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"/></defs><text><textPath href="#circ">OPEN 24/7 · SWEAT TOGETHER · </textPath></text></svg>
+                <i class="fas fa-dumbbell"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 ps-lg-5">
+            <span class="eyebrow" data-reveal="fade">Inside the club</span>
+            <h2 class="section-title" data-split>Built for <span class="red">every</span> rep</h2>
+            <p class="lead-text" data-reveal>Lifting platforms, a dedicated class studio, a turf lane for sleds and sprints, and a recovery zone to bring you back down.</p>
+            <ul class="check-list" data-stagger="left">
+              <li><i class="fas fa-check"></i>Racks, platforms and a full dumbbell wall</li>
+              <li><i class="fas fa-check"></i>Group studio for HIIT, cardio dance &amp; yoga</li>
+              <li><i class="fas fa-check"></i>Sauna, massage guns and cold towels</li>
+              <li><i class="fas fa-check"></i>Coaches on the floor to help with form</li>
+            </ul>
+            <div data-reveal><a href="gallery.html" class="btn-cc">Explore the gallery <i class="fas fa-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCHEDULE PREVIEW ===== -->
+    <section class="section" id="schedule">
+      <div class="glow" style="width:500px;height:500px;right:-250px;top:-10%"></div>
+      <div class="container z-2">
+        <div class="row section-head align-items-end g-4">
+          <div class="col-lg-7">
+            <span class="eyebrow" data-reveal="fade">Weekly schedule</span>
+            <h2 class="section-title" data-split>This week <span class="outline">at a</span> glance</h2>
+          </div>
+          <div class="col-lg-5 text-lg-end" data-reveal>
+            <p class="mb-3">Spots fill fast &mdash; reserve up to 7 days in advance.</p>
+            <a href="classes.html" class="link-arrow">Full timetable <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="week-strip" data-stagger>
+          <a class="day-card" href="classes.html?day=mon" data-day="1">
+            <div class="dc-day"><span>Monday</span></div>
+            <div class="dc-icon"><i class="fas fa-fire"></i></div>
+            <div class="dc-name">HIIT Blaze</div>
+            <div class="dc-time"><i class="far fa-clock me-1"></i> 9:30 AM · 5:30 PM</div>
+            <span class="dc-coach">Alex</span>
+          </a>
+          <a class="day-card" href="classes.html?day=tue" data-day="2">
+            <div class="dc-day"><span>Tuesday</span></div>
+            <div class="dc-icon"><i class="fas fa-heart-pulse"></i></div>
+            <div class="dc-name">Cardio Dance</div>
+            <div class="dc-time"><i class="far fa-clock me-1"></i> 10:00 AM · 6:15 PM</div>
+            <span class="dc-coach">Jordan</span>
+          </a>
+          <a class="day-card" href="classes.html?day=wed" data-day="3">
+            <div class="dc-day"><span>Wednesday</span></div>
+            <div class="dc-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="dc-name">Pump &amp; Iron</div>
+            <div class="dc-time"><i class="far fa-clock me-1"></i> 7:00 AM · 12:00 PM</div>
+            <span class="dc-coach">Cee Cee</span>
+          </a>
+          <a class="day-card" href="classes.html?day=thu" data-day="4">
+            <div class="dc-day"><span>Thursday</span></div>
+            <div class="dc-icon"><i class="fas fa-spa"></i></div>
+            <div class="dc-name">Yoga Flow</div>
+            <div class="dc-time"><i class="far fa-clock me-1"></i> 11:00 AM · 7:00 PM</div>
+            <span class="dc-coach">Maya</span>
+          </a>
+          <a class="day-card" href="classes.html?day=fri" data-day="5">
+            <div class="dc-day"><span>Friday</span></div>
+            <div class="dc-icon"><i class="fas fa-bolt"></i></div>
+            <div class="dc-name">Metcon</div>
+            <div class="dc-time"><i class="far fa-clock me-1"></i> 6:30 AM · 4:30 PM</div>
+            <span class="dc-coach">Rob</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRAINERS ===== -->
+    <section class="section section-alt" id="trainers">
+      <div class="container">
+        <div class="row section-head align-items-end g-4">
+          <div class="col-lg-7">
+            <span class="eyebrow" data-reveal="fade">Our coaches</span>
+            <h2 class="section-title" data-split>Meet <span class="outline">the</span> <span class="red">pros</span></h2>
+          </div>
+          <div class="col-lg-5"><p class="lead-text" data-reveal>Certified, experienced and genuinely invested in your progress &mdash; from your first rep to your next PR.</p></div>
+        </div>
+
+        <div class="row g-4" data-stagger="tilt">
+          <div class="col-sm-6 col-lg-3">
+            <article class="trainer-card" data-tilt="7">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=70&auto=format&fit=crop" alt="Cee Cee, owner and head coach" loading="lazy">
+              <div class="trainer-info">
+                <span class="trainer-role">Owner / Head coach</span>
+                <h3 class="trainer-name">Cee Cee</h3>
+                <p class="trainer-meta">10 yrs · strength &amp; conditioning</p>
+                <div class="trainer-social"><a href="#" aria-label="Cee Cee on Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Cee Cee on TikTok"><i class="fab fa-tiktok"></i></a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="trainer-card" data-tilt="7">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=70&auto=format&fit=crop" alt="Alex Rey, HIIT specialist" loading="lazy">
+              <div class="trainer-info">
+                <span class="trainer-role">HIIT specialist</span>
+                <h3 class="trainer-name">Alex Rey</h3>
+                <p class="trainer-meta">tabata · bootcamp · agility</p>
+                <div class="trainer-social"><a href="#" aria-label="Alex on Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Alex on TikTok"><i class="fab fa-tiktok"></i></a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="trainer-card" data-tilt="7">
+              <img src="https://images.unsplash.com/photo-1581009137042-c552e485697a?w=600&q=70&auto=format&fit=crop" alt="Jordan Lee, cardio and dance coach" loading="lazy">
+              <div class="trainer-info">
+                <span class="trainer-role">Cardio &amp; dance</span>
+                <h3 class="trainer-name">Jordan Lee</h3>
+                <p class="trainer-meta">zumba · step · fun cardio</p>
+                <div class="trainer-social"><a href="#" aria-label="Jordan on Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Jordan on TikTok"><i class="fab fa-tiktok"></i></a></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="trainer-card" data-tilt="7">
+              <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=70&auto=format&fit=crop" alt="Maya Joshi, yoga and mindset coach" loading="lazy">
+              <div class="trainer-info">
+                <span class="trainer-role">Yoga / Mindset</span>
+                <h3 class="trainer-name">Maya Joshi</h3>
+                <p class="trainer-meta">vinyasa · mobility · meditation</p>
+                <div class="trainer-social"><a href="#" aria-label="Maya on Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Maya on TikTok"><i class="fab fa-tiktok"></i></a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING TEASER ===== -->
+    <section class="section" id="pricing">
+      <div class="glow" style="width:460px;height:460px;left:-160px;bottom:-120px"></div>
+      <div class="container z-2">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-5">
+            <span class="eyebrow" data-reveal="fade">Membership</span>
+            <h2 class="section-title" data-split>Pick your <span class="red">plan</span></h2>
+            <p class="lead-text" data-reveal>Simple monthly memberships. Every plan starts with a 7-day free trial so you can feel the energy first.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4" data-reveal>
+              <a href="plans.html" class="btn-cc">Compare plans <i class="fas fa-arrow-right"></i></a>
+              <a href="signup.html" class="btn-ghost">Join now</a>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="d-grid gap-3" data-stagger="right">
+              <a class="plan-mini" href="signup.html?plan=starter">
+                <div><div class="pm-name">Starter</div><div class="pm-sub">Off-peak floor · 2 classes / week</div></div>
+                <div class="d-flex align-items-center gap-3"><div class="pm-price">$29<small>/mo</small></div><span class="pm-arrow"><i class="fas fa-arrow-right"></i></span></div>
+              </a>
+              <a class="plan-mini popular" href="signup.html?plan=unlimited">
+                <div><div class="pm-name">Unlimited <span class="badge rounded-pill ms-1" style="background:var(--red);font-family:var(--font-body);font-size:.6rem;letter-spacing:.1em;vertical-align:middle">MOST POPULAR</span></div><div class="pm-sub">24/7 · unlimited classes · sauna · 1 PT/mo</div></div>
+                <div class="d-flex align-items-center gap-3"><div class="pm-price">$59<small>/mo</small></div><span class="pm-arrow"><i class="fas fa-arrow-right"></i></span></div>
+              </a>
+              <a class="plan-mini" href="signup.html?plan=duo">
+                <div><div class="pm-name">Duo / Couple</div><div class="pm-sub">Two memberships · 24/7 for both · 2 PT/mo</div></div>
+                <div class="d-flex align-items-center gap-3"><div class="pm-price">$89<small>/mo</small></div><span class="pm-arrow"><i class="fas fa-arrow-right"></i></span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="pb-5 mb-lg-4">
+      <div class="container">
+        <div class="cta-banner" data-reveal="scale">
+          <div class="cta-bg" style="background-image:url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=1600&q=60&auto=format&fit=crop')" data-speed="1"></div>
+          <div class="cta-ring"></div><div class="cta-ring r2"></div>
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <h2 class="mb-3">Your first week<br>is on us.</h2>
+              <p class="mb-0">Seven days of unlimited classes, full gym access and a coach to show you around. No pressure &mdash; just sweat.</p>
+            </div>
+            <div class="col-lg-4 d-flex flex-wrap gap-3 justify-content-lg-end">
+              <a href="signup.html" class="btn-cc"><i class="fas fa-bolt"></i> Claim free trial</a>
+              <a href="classes.html" class="btn-ghost">See classes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // highlight today's card in the week strip
+    (function () {
+      var d = new Date().getDay();
+      var card = document.querySelector('.day-card[data-day="' + d + '"]');
+      if (card) {
+        card.classList.add('is-today');
+        card.querySelector('.dc-day').insertAdjacentHTML('beforeend', '<span class="today-tag">Today</span>');
+      }
+    })();
+  </script>
+</body>
+</html>
